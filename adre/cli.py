@@ -8,6 +8,7 @@ from adre.utils import (
     extract_adrs,
     list_adr_files
 )
+from adre.web.app import create_app
 
 
 class ContextObject:
@@ -57,7 +58,8 @@ def new(ctx_obj: ContextObject, title: str) -> None:
 @click.pass_obj
 def serve(ctx_obj: ContextObject) -> None:
     adrs = extract_adrs(ctx_obj.path)
-    print(adrs)
+    web_app = create_app()
+    web_app.run(reloader=True)
 
 
 main.add_command(init)

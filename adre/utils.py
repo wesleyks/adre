@@ -4,6 +4,7 @@ import datetime
 from typing import List
 
 FILENAME_NUMBER_REGEX = re.compile(r'^\d{4}')
+ROOT = os.path.dirname(os.path.abspath(__file__))
 
 
 class ADR:
@@ -33,7 +34,7 @@ def filename_extract_number(filename: str) -> int:
 def create_adr(
         title: str, number: int, path: str, status: str = 'Proposed'
 ) -> str:
-    template_path = os.path.join(os.path.dirname(__file__), 'adr_template.md')
+    template_path = os.path.join(ROOT, 'adr_template.md')
     title_slug = re.sub(r'[\W_]', '-', title)
     adr_path = os.path.join(
         path,

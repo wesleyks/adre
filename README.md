@@ -6,13 +6,15 @@
 brew install adre
 
 adre init
-adre 
+adre new "Babby's first ADR"
+adre serve
 ```
 
 ## Constraints
 
-- no other installs
+- user only needs to instal adre and nothing else
 - easy to use
-- migrate off adr-tools
+- support migrate off adr-tools
 - mostly compatible with adr-tools
 - minimal dependencies
+- adrs read well like a regular document (im looking at you, yaml frontmatter)
