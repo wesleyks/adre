@@ -8,7 +8,7 @@ from adre.utils import (
     extract_adrs,
     list_adr_files
 )
-from adre.web.app import create_app
+from adre.server.app import create_app
 
 
 class ContextObject:
