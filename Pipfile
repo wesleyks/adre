@@ -7,9 +7,10 @@ verify_ssl = true
 flake8 = "*"
 mypy = "*"
 rope = "*"
+pre-commit = "*"
 
 [packages]
-adre = {editable = true,path = "."}
+adre = {path = ".",editable = true}
 
 [requires]
-python_version = "3.7"
+python_version = "3.6"

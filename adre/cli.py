@@ -5,7 +5,6 @@ import click
 from adre.utils import (
     filename_extract_number,
     create_adr,
-    extract_adrs,
     list_adr_files
 )
 from adre.server.app import create_app
@@ -57,8 +56,7 @@ def new(ctx_obj: ContextObject, title: str) -> None:
 @click.command()
 @click.pass_obj
 def serve(ctx_obj: ContextObject) -> None:
-    adrs = extract_adrs(ctx_obj.path)
-    web_app = create_app()
+    web_app = create_app(ctx_obj.path)
     web_app.run(reloader=True)
 
 

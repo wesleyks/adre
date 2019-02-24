@@ -4,6 +4,8 @@ import datetime
 from typing import List
 
 FILENAME_NUMBER_REGEX = re.compile(r'^\d{4}')
+ADR_TITLE_REGEX = re.compile(r'^#\s\d+\.\s(.+)', re.MULTILINE)
+ADR_DATE_REGEX = re.compile(r'^[Dd]ate:\s*(.+)', re.MULTILINE)
 ROOT = os.path.dirname(os.path.abspath(__file__))
 
 
@@ -11,6 +13,31 @@ class ADR:
     def __init__(self, filename: str, content: str):
         self.filename = filename
         self.content = content
+
+    @property
+    def id(self) -> int:
+        return filename_extract_number(self.filename)
+
+    @property
+    def title(self) -> str:
+        match = ADR_TITLE_REGEX.search(self.content)
+        if match:
+            return match.group(1)
+        raise Exception(
+            'Could not find title for adr.'
+        )
+
+    @property
+    def date(self) -> datetime.date:
+        match = ADR_DATE_REGEX.search(self.content)
+        if match is None:
+            raise Exception(
+                'Could not find date for adr.'
+            )
+        return datetime.datetime.strptime(
+            match.group(1),
+            '%Y-%m-%d'
+        ).date()
 
 
 def list_adr_files(path: str) -> List[str]:
