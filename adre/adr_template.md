@@ -11,3 +11,5 @@ Date: {date}
 ## Decision
 
 ## Consequences
+
+## Tags

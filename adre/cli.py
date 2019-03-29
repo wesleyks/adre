@@ -63,3 +63,6 @@ def serve(ctx_obj: ContextObject) -> None:
 main.add_command(init)
 main.add_command(new)
 main.add_command(serve)
+
+if __name__ == "__main__":
+    main()

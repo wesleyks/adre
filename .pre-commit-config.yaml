@@ -12,14 +12,11 @@ repos:
     rev: v0.670
     hooks:
     -   id: mypy
--   repo: https://github.com/pre-commit/mirrors-eslint
-    rev: v5.14.1
-    hooks:
-    -   id: eslint
-        additional_dependencies:
-        -   eslint
-        -   '@vue/eslint-config-airbnb'
-        -   '@vue/cli-service'
-        -   babel-eslint
-        -   eslint-plugin-vue
-        -   eslint-plugin-import
+# -   repo: local
+#     hooks:
+#     -   id: vue-cli-lint
+#         name: vue cli lint
+#         entry: npm
+#         language: system
+#         files: \.(ts|vue)$
+#         args: [--prefix, './adre/server/frontend', run, lint, '--']

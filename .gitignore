@@ -105,3 +105,7 @@ venv.bak/
 
 .vscode/.ropeproject
 *.code-workspace
+
+node_modules
+
+doc
