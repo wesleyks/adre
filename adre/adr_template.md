@@ -13,3 +13,4 @@ Date: {date}
 ## Consequences
 
 ## Tags
+- foo.bar

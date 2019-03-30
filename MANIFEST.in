@@ -1,1 +1,2 @@
+include adre/*.md
 recursive-include adre/server/dist *

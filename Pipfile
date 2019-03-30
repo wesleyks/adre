@@ -8,6 +8,7 @@ flake8 = "*"
 mypy = "*"
 rope = "*"
 pre-commit = "*"
+twine = "*"
 
 [packages]
 adre = {path = ".",editable = true}
