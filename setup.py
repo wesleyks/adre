@@ -5,7 +5,7 @@ with open('README.md', 'r') as fh:
 
 setup(
     name='adre',
-    version='0.0',
+    version='0.0.1',
     description='ADR Extended',
     long_description=long_description,
     long_description_content_type='text/markdown',
