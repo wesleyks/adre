@@ -1,10 +1,15 @@
-from setuptools import setup
+from setuptools import setup, find_packages
+
+with open('README.md', 'r') as fh:
+    long_description = fh.read()
 
 setup(
     name='adre',
     version='0.0',
     description='ADR Extended',
-    packages=['adre'],
+    long_description=long_description,
+    long_description_content_type='text/markdown',
+    packages=find_packages(),
     install_requires=[
         'click',
         'bottle'
@@ -13,5 +18,6 @@ setup(
         'console_scripts': [
             'adre=adre.cli:main'
         ]
-    }
+    },
+    include_package_data=True,
 )
